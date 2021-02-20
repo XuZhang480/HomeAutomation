@@ -1,0 +1,87 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Tue Nov 10 15:46:59 2020
+| Host         : DESKTOP-3H7BMI4 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    18 |
+| Unused register locations in slices containing registers |    27 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      4 |            4 |
+|      5 |            1 |
+|      6 |            1 |
+|      8 |            3 |
+|     15 |            1 |
+|    16+ |            8 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              20 |            8 |
+| No           | No                    | Yes                    |              84 |           24 |
+| No           | Yes                   | No                     |             759 |          221 |
+| Yes          | No                    | No                     |              48 |           14 |
+| Yes          | No                    | Yes                    |             110 |           37 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------------------------+-----------------------------------------+----------------------------+------------------+----------------+
+|              Clock Signal             |              Enable Signal              |      Set/Reset Signal      | Slice Load Count | Bel Load Count |
++---------------------------------------+-----------------------------------------+----------------------------+------------------+----------------+
+| ~db_IBUF_BUFG                         | nolabel_line59/E[0]                     |                            |                1 |              4 |
+| ~db_IBUF_BUFG                         | con_c_IBUF                              |                            |                2 |              4 |
+| ~pb_IBUF_BUFG                         | nolabel_line59/E[0]                     |                            |                2 |              4 |
+| ~pb_IBUF_BUFG                         | con_c_IBUF                              |                            |                1 |              4 |
+|  clk_100_IBUF_BUFG                    |                                         |                            |                1 |              5 |
+|  nolabel_line49/inst/clk_out1         |                                         | nolabel_line53/reset_t     |                1 |              6 |
+|  clk_100_IBUF_BUFG                    |                                         | nolabel_line53/reset_t     |                2 |              8 |
+|  clk_100_IBUF_BUFG                    | nolabel_line55/ten                      | nolabel_line53/reset_t     |                3 |              8 |
+|  clk_100_IBUF_BUFG                    | nolabel_line56/one[3]_i_1_n_0           | nolabel_line53/reset_t     |                3 |              8 |
+|  nolabel_line65/nolabel_line44/s0/CLK |                                         |                            |                7 |             15 |
+|  clk_100_IBUF_BUFG                    | nolabel_line55/shift_reg[15]_i_1_n_0    | nolabel_line53/reset_t     |                4 |             16 |
+|  clk_100_IBUF_BUFG                    | nolabel_line56/shift_reg[15]_i_1__0_n_0 | nolabel_line53/reset_t     |                4 |             16 |
+|  clk_100_IBUF_BUFG                    | nolabel_line67/seg[7]_i_1_n_0           | reset_s_IBUF               |               12 |             16 |
+|  clk_1m                               |                                         | nolabel_line53/reset_t     |               11 |             32 |
+|  clk_1m                               | nolabel_line53/data_valid[31]_i_1_n_0   |                            |                8 |             32 |
+|  clk_100_IBUF_BUFG                    |                                         | reset_s_IBUF               |               10 |             38 |
+|  clk_1m                               | nolabel_line53/data_cnt[5]_i_1_n_0      | nolabel_line53/reset_t     |               11 |             46 |
+|  clk_100_IBUF_BUFG                    |                                         | nolabel_line56/led_OBUF[0] |              221 |            759 |
++---------------------------------------+-----------------------------------------+----------------------------+------------------+----------------+
+
+
